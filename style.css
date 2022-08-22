@@ -34,14 +34,19 @@ main {
 }
 
 .left {
-  width: 52rem;
+  width: 32rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.center {
+  width: 32rem;
+  font-size: 2rem;
+}
+
 .right {
-  width: 52rem;
+  width: 32rem;
   font-size: 2rem;
 }
 
