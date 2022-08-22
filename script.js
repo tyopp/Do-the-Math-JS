@@ -1,7 +1,7 @@
 'use strict';
 //  Game logic
 let score = 20;
-let secretNum = Math.trunc(Math.random()* 20 ) + 1;
+let secretNum = Math.trunc(Math.random()* 8 ) + 1;
 let highScore = 0;
 
 
@@ -49,7 +49,7 @@ function() {
 //  Again button
 document.querySelector('.again').addEventListener('click', function() {
     score = 20;
-    secretNum = Math.trunc(Math.random() * 20) + 1;
+    secretNum = Math.trunc(Math.random() * 8) + 1;
 
     document.querySelector('.message').textContent = 'Start guessing...';
     document.querySelector('.score').textContent = score;
