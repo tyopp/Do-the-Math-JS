@@ -2,6 +2,9 @@
 //  Game logic
 let score = 20;
 let secretNum = Math.trunc(Math.random()* 20 ) + 1;
+let highScore = 0;
+
+
 document.querySelector('.check').addEventListener('click', 
 function() {
     const guess = Number(document.querySelector('.guess').value);
@@ -17,6 +20,10 @@ function() {
         document.querySelector('.message').textContent = '😎😎😎 Siuuu You won!';
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '40rem';
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+        }
         //  When user guess is too low
     } else if (guess < secretNum) {
         if (score > 1) {
@@ -39,6 +46,7 @@ function() {
         }
     }
 })
+//  Again button
 document.querySelector('.again').addEventListener('click', function() {
     score = 20;
     secretNum = Math.trunc(Math.random() * 20) + 1;
