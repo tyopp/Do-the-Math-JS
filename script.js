@@ -47,14 +47,20 @@ function() {
     }
 })
 //  Again button
+const left = document.querySelector('.left');
 document.querySelector('.again').addEventListener('click', function() {
     score = 20;
     secretNum = Math.trunc(Math.random() * 20) + 1;
-
     document.querySelector('.message').textContent = 'Start guessing...';
     document.querySelector('.score').textContent = score;
     document.querySelector('.number').textContent = '?';
     document.querySelector('.guess').value = '';
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').style.width = '15rem';
-})
+});
+const btnAgain = document.querySelector('.again');
+for(let i = 0; i < btnAgain.length; i++) {
+    btnAgain[i].addEventListener('click', function() {
+        left.classList.remove('hidden');
+    });
+}
